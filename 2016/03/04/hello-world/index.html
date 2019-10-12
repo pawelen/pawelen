@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="hello world,">
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="Willian's Notes" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="这篇文章主要介绍了 24 种编程语言的 Hello World 程序，包括熟知的 Java、C 语言、C++、C#、Ruby、Python、PHP 等编程语言，需要的朋友可以参考下。Hello World，几乎是程序猿学习各种语言的第一个程序。心血来潮，汇总并整理了下主流开发语言如何实现，包括大致快速了解下这门语言、开发、编译、环境搭建、运行、简单语言等，其实很多语言是有关联的。在当下，只掌握一门">
+<meta name="keywords" content="hello world">
+<meta property="og:type" content="article">
+<meta property="og:title" content="24种编程语言的Hello World程序">
+<meta property="og:url" content="http://yoursite.com/2016/03/04/hello-world/index.html">
+<meta property="og:site_name" content="Willian&#39;s Notes">
+<meta property="og:description" content="这篇文章主要介绍了 24 种编程语言的 Hello World 程序，包括熟知的 Java、C 语言、C++、C#、Ruby、Python、PHP 等编程语言，需要的朋友可以参考下。Hello World，几乎是程序猿学习各种语言的第一个程序。心血来潮，汇总并整理了下主流开发语言如何实现，包括大致快速了解下这门语言、开发、编译、环境搭建、运行、简单语言等，其实很多语言是有关联的。在当下，只掌握一门">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-05T14:05:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="24种编程语言的Hello World程序">
+<meta name="twitter:description" content="这篇文章主要介绍了 24 种编程语言的 Hello World 程序，包括熟知的 Java、C 语言、C++、C#、Ruby、Python、PHP 等编程语言，需要的朋友可以参考下。Hello World，几乎是程序猿学习各种语言的第一个程序。心血来潮，汇总并整理了下主流开发语言如何实现，包括大致快速了解下这门语言、开发、编译、环境搭建、运行、简单语言等，其实很多语言是有关联的。在当下，只掌握一门">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/03/04/hello-world/">
+
+
+
+
+
+  <title>24种编程语言的Hello World程序 | Willian's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Willian's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/04/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Willian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Willian's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">24种编程语言的Hello World程序</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-04T01:13:23+08:00">
+                2016-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小知识/" itemprop="url" rel="index">
+                    <span itemprop="name">小知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/03/04/hello-world/" class="leancloud_visitors" data-flag-title="24种编程语言的Hello World程序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这篇文章主要介绍了 24 种编程语言的 Hello World 程序，包括熟知的 Java、C 语言、C++、C#、Ruby、Python、PHP 等编程语言，需要的朋友可以参考下。<br>Hello World，几乎是程序猿学习各种语言的第一个程序。心血来潮，汇总并整理了下主流开发语言如何实现，包括大致快速了解下这门语言、开发、编译、环境搭建、运行、简单语言等，其实很多语言是有关联的。在当下，只掌握一门语言是不够的，比如说 Python，语言简洁、开发快是其最大优点，但缺点是速度相对较慢，C/C++/Java 开发比较慢，但程序运行速度比较快，如果想兼具两者的优点，就要写Python的扩展，这就涉及到（C、C++、Java、Fortan…）等语言，Python 的 GUI 中 Tkinter 里面又涉及到 TCL 语言，所以就 Python 开发来说，就必须熟悉 C（CPython 就是用 C 开发出来的），最好同时熟悉 Java（Jython、Python 是基于 Java 的实现），C++/C#（IronPython 就是基于 C# 及 .net 的实现），还有不同语言间的通信可能会用到 CORBAL，还有 Python 中可能会调用 SHELL 中的命令，或 Perl 的命令。所以，精通一到两门，熟悉多门语言是必须的。<br>下面用多种语言来实现打印 Hello World，包括所需要的环境（主要是如何编译、链接等）、代码、语言说明、语言特色介绍。<br>并带附录：2014 年编程语言总排行榜前二十名、Web 开发语言排行榜前十名以及移动应用开发语言排行榜前十名。</p>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p>环境: JDK1.7</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\&gt;java -version   </span><br><span class="line">java version <span class="string">"1.7.0_51"</span>  </span><br><span class="line">Java(TM) <span class="function">SE Runtime <span class="title">Environment</span> <span class="params">(build <span class="number">1.7</span><span class="number">.0</span>_51-b13)</span>  </span></span><br><span class="line"><span class="function">Java <span class="title">HotSpot</span><span class="params">(TM)</span> Client <span class="title">VM</span> <span class="params">(build <span class="number">24.51</span>-b03, mixed mode, sharing)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#FileName: HelloWorld.java  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span>   #如果有 <span class="title">public</span> 类的话，类名必须和文件同名，注意大小写  </span></span><br><span class="line"><span class="class"></span>&#123;  </span><br><span class="line">  #Java 入口程序，程序从此入口  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span></span><br><span class="line"><span class="function">  </span>&#123;  </span><br><span class="line">  #向控制台打印一条语句  </span><br><span class="line">    System.out.println(<span class="string">"Hello,World!"</span>);  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;javac HelloWorld.java    #用 javac 编译成字节码文件（HelloWorld.class）  </span><br><span class="line">D:\HelloWorld&gt;java HelloWorld          #用 java 解释执行成特定平台的机器码  </span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p>环境: MinGW 或各种 C++ 编译器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;gcc -v  </span><br><span class="line">Reading specs from C:/Perl/site/lib/auto/MinGW/bin/../lib/gcc/mingw32/<span class="number">3.4</span>.5/specs  </span><br><span class="line">Configured with: ../gcc-<span class="number">3.4</span>.5-<span class="number">20060117</span>-<span class="number">3</span>/configure --with-gcc --with-gnu-ld --with-gnu-as --host=min  </span><br><span class="line">gw32 --target=mingw32 --prefix=/mingw --enable-threads --disable-nls --enable-languages=c,c++,f77,ad  </span><br><span class="line">a,objc,java --disable-win32-registry --disable-shared --enable-sjlj-exceptions --enable-libgcj --dis  </span><br><span class="line">able-java-awt --without-x --enable-java-gc=boehm --disable-libgcj-debug --enable-interpreter --enabl  </span><br><span class="line">e-hash-synchronization --enable-libstdcxx-debug  </span><br><span class="line">Thread model: win32  </span><br><span class="line">gcc version <span class="number">3.4</span>.5 (mingw-vista special r3)</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;  </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>                <span class="meta">#main 入口函数  </span></span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Hello,World!"</span>); <span class="meta">#printf 函数打印  </span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span>;               #函数返回值  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;gcc HelloWorld.c -o output   #文件名 HelloWorld.c，-o 输出文件名 output  </span><br><span class="line">HelloWorld.c:<span class="number">6</span>:<span class="number">2</span>: warning: no newline at end of file  </span><br><span class="line"></span><br><span class="line">D:\HelloWorld&gt;output                       #直接运行输出文件               </span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#如果未安装 GCC，那么必须按照 http://gcc.gnu.org/install/ 上的详细说明安装 GCC。  </span><br><span class="line">#为了在 Windows 上安装 GCC，需要安装 MinGW。</span><br><span class="line">#为了安装 MinGW，请访问 MinGW 的主页 www.mingw.org，进入 MinGW 下载页面，下载最新版本的 MinGW 安装程序，命名格式为 MinGW-&lt;version&gt;.exe。  </span><br><span class="line">#当安装 MinWG 时，至少要安装 gcc-core、gcc-g++、binutils 和 MinGW runtime，但是一般情况下都会安装更多其他的项。    </span><br><span class="line">#添加您安装的 MinGW 的 bin 子目录到您的 PATH 环境变量中，这样您就可以在命令行中通过简单的名称来指定这些工具。    </span><br><span class="line">#当完成安装时，就可以从 Windows 命令行上运行 gcc、g++、ar、ranlib、dlltool 和其他一些 GNU 工具。</span><br></pre></td></tr></table></figure>
+
+<h2 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h2><p>环境: MinGW 或各种 C++ 编译器<br>头文件后缀名：.h、.hpp、.hxx<br>源文件后缀名：.cpp、.c++、.cxx、.cc、.C</p>
+<p>代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;               //std::cout 要用到的头文件  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;                //标准输入输出头文件  </span></span></span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Hello,World!--Way 1\n"</span>);    <span class="comment">//printf 语句打印  </span></span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">"Hello,World!--Way 2"</span>);        <span class="comment">//puts 语句  </span></span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">"Hello,"</span> <span class="string">" "</span> <span class="string">"World!--Way 3"</span>); <span class="comment">//字符串拼接  </span></span><br><span class="line">  <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello,World!--Way 4"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>; <span class="comment">//C++ 教科书上写法  </span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span>;                                        <span class="comment">//作为注释  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;g++ HelloWorld.c++ -o output   <span class="comment">//源文件后缀也可为 .cpp、.C  </span></span><br><span class="line">  </span><br><span class="line">D:\HelloWorld&gt;output  </span><br><span class="line">Hello,World!--Way <span class="number">1</span>  </span><br><span class="line">Hello,World!--Way <span class="number">2</span>  </span><br><span class="line">Hello,World!--Way <span class="number">3</span>  </span><br><span class="line">Hello,World!--Way <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p>环境: Python 2.x 或 Python 3.x</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;python  </span><br><span class="line">Python <span class="number">2.7</span>.4 (<span class="keyword">default</span>, Apr  <span class="number">6</span> <span class="number">2013</span>, <span class="number">19</span>:<span class="number">55</span>:<span class="number">15</span>) [MSC v.1500 <span class="number">64</span> bit (AMD64)] on win32  </span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;&gt; <span class="keyword">print</span> <span class="string">"Hello,World!"</span>   <span class="comment">#Python 2.x  </span></span><br><span class="line">Hello,World!  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"Hello,World!"</span>)  <span class="comment">#Python 3.x    </span></span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<ol>
+<li>在 Python 3.x 中，print 语句是函数，所以为 print()。</li>
+<li>也可以写在 .py 文件中，同样执行。</li>
+<li>python2.6 及以上版本和 python3.x 基本相同，也同样可以使用 print() 来打印。</li>
+</ol>
+<h2 id="C-2"><a href="#C-2" class="headerlink" title="C"></a>C</h2><p>环境: Windows</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d:\HelloWorld&gt;csc -v  </span><br><span class="line">Microsoft (R) Visual C# 2005 Compiler version 8.00.50727.4927  </span><br><span class="line"><span class="function"><span class="keyword">for</span> <span class="title">Microsoft</span> <span class="params">(R)</span> <span class="title">Windows</span> <span class="params">(R)</span> 2005 Framework version 2.0.50727  </span></span><br><span class="line"><span class="function"><span class="title">Copyright</span> <span class="params">(C)</span> Microsoft Corporation 2001-2005. All rights reserved.</span></span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//FileName: HelloWorld.cs  </span><br><span class="line">using System;  </span><br><span class="line">class TestApp  </span><br><span class="line">&#123;  </span><br><span class="line">  public static void Main()  </span><br><span class="line">  &#123;  </span><br><span class="line">    Console.WriteLine(&quot;Hello,World!&quot;);  </span><br><span class="line">    Console.ReadKey();  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">//执行如下:  </span><br><span class="line">d:\HelloWorld&gt;csc HelloWorld.cs  </span><br><span class="line">Microsoft (R) Visual C# 2005 Compiler version 8.00.50727.4927  </span><br><span class="line">for Microsoft (R) Windows (R) 2005 Framework version 2.0.50727  </span><br><span class="line">Copyright (C) Microsoft Corporation 2001-2005. All rights reserved.  </span><br><span class="line">  </span><br><span class="line">d:\HelloWorld&gt;HelloWorld.exe  </span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>C# 其实和 Java 非常相像，刚才用的是命令行方式，需要设置环境变量，可以参考：<a href="http://www.jb51.net/article/67171.htm" target="_blank" rel="noopener">http://www.jb51.net/article/67171.htm</a>。<br>如果是直接下载 Microsoft Visual Studio 的话，就可以在 IDE 中用快捷键编译、运行。</p>
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>环境: XAMPP 1.8.3,环境搭建指南：<a href="http://www.cnblogs.com/wangkangluo1/archive/2011/07/19/2110943.html" target="_blank" rel="noopener">http://www.cnblogs.com/wangkangluo1/archive/2011/07/19/2110943.html</a>。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\&gt;java -version   </span><br><span class="line">java version <span class="string">"1.7.0_51"</span>  </span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.7</span><span class="number">.0</span>_51-b13)  </span><br><span class="line">Java HotSpot(TM) Client VM (build <span class="number">24.51</span>-b03, mixed mode, sharing)</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;  </span><br><span class="line">&lt;body&gt;  </span><br><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line"><span class="keyword">echo</span> <span class="string">"Hello,World!"</span>;            <span class="comment">//打印语句  </span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"The first php program!"</span>;  <span class="comment">//打印语句  </span></span><br><span class="line"><span class="keyword">echo</span> phpinfo();                 <span class="comment">//phpinfo()系统函数,输出环境信息  </span></span><br><span class="line"><span class="meta">?&gt;</span>  </span><br><span class="line">&lt;/body&gt;  </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#PHP（Hypertext Preprocessor）。  </span></span><br><span class="line"><span class="comment">#PHP 是一种 HTML 内嵌式的语言，PHP 与微软的 ASP 颇有几分相似，都是一种在服务器端执行的嵌入 HTML 文档的脚本语言。  </span></span><br><span class="line"><span class="comment">#PHP 语言的风格类似于 C 语言，现在被很多的网站编程人员广泛地运用。  </span></span><br><span class="line"><span class="comment">#PHP 独特的语法混合了 C、Java、Perl 以及 PHP 自创新的语法。它可以比 CGI 或者 Perl 更快速地执行动态网页。  </span></span><br><span class="line"><span class="comment">#与其他的编程语言相比，PHP 是将程序嵌入到 HTML 文档中去执行，执行效率比完全生成 HTML 标记的 CGI 要高许多。  </span></span><br><span class="line"><span class="comment">#与同样是嵌入 HTML 文档的脚本语言 JavaScript 相比，PHP 在服务器端执行，充分利用了服务器的性能。  </span></span><br><span class="line"><span class="comment">#PHP 执行引擎还会将用户经常访问的 PHP 程序驻留在内存中，其他用户再一次访问这个程序时就不需要重新编译程序了，只要直接执行内存中的代码就可以了，这也是 PHP 高效率的体现之一。  </span></span><br><span class="line"><span class="comment">#PHP 具有非常强大的功能，所有的 CGI 或者 JavaScript 的功能，PHP 都能实现，而且几乎支持所有流行的数据库以及操作系统。</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>环境: node.js 或 jaxer<br>node下载链接: <a href="http://nodejs.org/download/" target="_blank" rel="noopener">http://nodejs.org/download/</a>  按提示，下载自己想要的文件即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\&gt;java -version   </span><br><span class="line">java version <span class="string">"1.7.0_51"</span>  </span><br><span class="line">Java(TM) SE Runtime Environment (build <span class="number">1.7</span><span class="number">.0</span>_51-b13)  </span><br><span class="line">Java HotSpot(TM) Client VM (build <span class="number">24.51</span>-b03, mixed mode, sharing)</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var sys = require("sys");    #导入需要的 sys 模块  </span><br><span class="line">sys.puts("Hello,World!");    #调用里面的 puts 函数来打印字符串</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\&gt;node HelloWorld.js       #node + *.js，执行  </span><br><span class="line">Hello,World!  </span><br><span class="line">#JavaScript 是 Web 的编程语言。  </span><br><span class="line">#所有现代的 HTML 页面都使用 JavaScript。  </span><br><span class="line">#JavaScript 非常容易学。</span><br></pre></td></tr></table></figure>
+
+<h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><p>环境: ruby 1.9.3</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;ruby -v  </span><br><span class="line">ruby <span class="number">1.9</span>.3p429 (<span class="number">2013</span>-<span class="number">05</span>-<span class="number">15</span>) [i386-mingw32]</span><br><span class="line">代码</span><br><span class="line">```Ruby</span><br><span class="line">#可用 print 语句打印  </span><br><span class="line">print <span class="string">"Hello,World!\n"</span>   </span><br><span class="line">#可用 puts 语句打印  </span><br><span class="line">puts  <span class="string">"Hello,World!\n"</span>   </span><br><span class="line">#可以先声明一个变量，然后再用 puts 语句  </span><br><span class="line">a = <span class="string">"Hello,World!\n"</span>     </span><br><span class="line">puts a  </span><br><span class="line">#可以先写个函数再调用  </span><br><span class="line"><span class="function">def <span class="title">say</span><span class="params">(name)</span>  </span></span><br><span class="line"><span class="function">   "Hello,#</span>&#123;name&#125;<span class="string">"  </span></span><br><span class="line"><span class="string">end  </span></span><br><span class="line"><span class="string">puts say("</span>World!<span class="string">")</span></span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">D:</span>\HelloWorld&gt;ruby HelloWorld.rb     <span class="comment">#运行方式类似 Python、Perl  </span></span><br><span class="line">Hello,World!  </span><br><span class="line">Hello,World!  </span><br><span class="line">Hello,World!  </span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><p>环境: R-3.1.2-win（适用于32、64位），分别有相应的 GUI</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">C:\&gt;R                  #安装好了之后，输入 R 后显示  </span><br><span class="line">  </span><br><span class="line">R version <span class="number">3.1</span>.2 (<span class="number">2014</span>-<span class="number">10</span>-<span class="number">31</span>) -- <span class="string">"Pumpkin Helmet"</span>  </span><br><span class="line">Copyright (C) <span class="number">2014</span> The R Foundation <span class="keyword">for</span> Statistical Computing  </span><br><span class="line">Platform: i386-w64-mingw32/i386 (<span class="number">32</span>-bit)  </span><br><span class="line">  </span><br><span class="line">R  </span><br><span class="line">  </span><br><span class="line"><span class="string">'license()'</span><span class="string">'licence()'</span>  </span><br><span class="line">  </span><br><span class="line">R.  </span><br><span class="line"><span class="string">'contributors()'</span>  </span><br><span class="line"><span class="string">'citation()'</span>RR  </span><br><span class="line">  </span><br><span class="line"><span class="string">'demo()'</span><span class="string">'help()'</span>  </span><br><span class="line"><span class="string">'help.start()'</span>HTML  </span><br><span class="line"><span class="string">'q()'</span>R.</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello,World!"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<p>R 语言，一种自由软件编程语言与操作环境，主要用于统计分析、绘图、数据挖掘。<br>下面是安装下载比较详细的步骤参见：<br><a href="http://www.jb51.net/os/RedHat/335436.html" target="_blank" rel="noopener">http://www.jb51.net/os/RedHat/335436.html</a></p>
+<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><p>环境: ORACLE SQL/PLUS</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;ruby -v  </span><br><span class="line">SQL&gt; select 'Hello,World!' from dual;  </span><br><span class="line">  </span><br><span class="line">'HELLO,WORLD  </span><br><span class="line"><span class="comment">------------  </span></span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>还可以建一个表，插入，再查询，最后删除该表。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; CREATE TABLE MESSAGE (TEXT CHAR(15));            #创建表  </span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> MESSAGE (<span class="built_in">TEXT</span>) <span class="keyword">VALUES</span> (<span class="string">'Hello, world!'</span>);  <span class="comment">#插入表  </span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">TEXT</span> <span class="keyword">FROM</span> MESSAGE;                             <span class="comment">#查询表  </span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> MESSAGE;                                   <span class="comment">#删除表               </span></span><br><span class="line">Table created.  </span><br><span class="line">  </span><br><span class="line">SQL&gt;  </span><br><span class="line">1 row created.  </span><br><span class="line">  </span><br><span class="line">SQL&gt;  </span><br><span class="line">TEXT  </span><br><span class="line"><span class="comment">---------------  </span></span><br><span class="line">Hello, world!</span><br></pre></td></tr></table></figure>
+
+<h2 id="Perl"><a href="#Perl" class="headerlink" title="Perl"></a>Perl</h2><p>环境: Perl 5.16 或 MinGW<br>下载 URL：<a href="http://www.activestate.com/activeperl/downloads" target="_blank" rel="noopener">http://www.activestate.com/activeperl/downloads</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;perl -v  </span><br><span class="line">  </span><br><span class="line">This is perl <span class="number">5</span>, version <span class="number">16</span>, subversion <span class="number">3</span> (v5.16.3) built <span class="keyword">for</span> MSWin32-x86-multi-thread  </span><br><span class="line">(with <span class="number">1</span> registered patch, see perl -V <span class="keyword">for</span> more detail)  </span><br><span class="line">  </span><br><span class="line">Copyright <span class="number">1987</span>-<span class="number">2012</span>, Larry Wall  </span><br><span class="line">  </span><br><span class="line">Binary build <span class="number">1603</span> [<span class="number">296746</span>] provided by ActiveState http:<span class="comment">//www.ActiveState.com  </span></span><br><span class="line">Built Mar <span class="number">13</span> <span class="number">2013</span> <span class="number">11</span>:<span class="number">29</span>:<span class="number">21</span>  </span><br><span class="line">  </span><br><span class="line">Perl may be copied only under the terms of either the Artistic License or the  </span><br><span class="line">GNU General Public License, which may be found in the Perl <span class="number">5</span> source kit.  </span><br><span class="line">  </span><br><span class="line">Complete documentation <span class="keyword">for</span> Perl, including FAQ lists, should be found on  </span><br><span class="line"><span class="keyword">this</span> system using <span class="string">"man perl"</span> or <span class="string">"perldoc perl"</span>.  If you have access to the  </span><br><span class="line">Internet, point your browser at http:<span class="comment">//www.perl.org/, the Perl Home Page.</span></span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!C:\Perl\bin                    #Windows 平台下  </span><br><span class="line">#!/usr/bin/env perl              #Linux 环境下  </span><br><span class="line">print "Hello,World!\n";          #print("Hello,World") 也可</span><br></pre></td></tr></table></figure>
+
+<p>输出结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;perl HelloWorld.pl #类似于 python file.py  </span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#Perl 5.10 及以上的版本可以用  </span><br><span class="line">use <span class="number">5.010</span>;  </span><br><span class="line">say <span class="string">"Hello,World!"</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>环境: HTML 或 HTML 5.0</p>
+<p>代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is the first program!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hello,World!<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>说明<br>大多数主流浏览器都支持 HTML4.0，有些浏览器只支持 HTML5.0 的部分功能。</p>
+<h2 id="VB"><a href="#VB" class="headerlink" title="VB"></a>VB</h2><p>环境: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">VBC version <span class="number">8.0</span>.5</span><br><span class="line">D:\Learn\C&gt;vbc -v  </span><br><span class="line">Microsoft (R) Visual Basic Compiler version <span class="number">8.0</span>.50727.5483  </span><br><span class="line"><span class="function"><span class="keyword">for</span> <span class="title">Microsoft</span> <span class="params">(R)</span> .NET Framework version 2.0.50727.5485  </span></span><br><span class="line"><span class="function"><span class="title">Copyright</span> <span class="params">(c)</span> Microsoft Corporation.  All rights reserved.  </span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function">vbc : Command line warning BC2007 : unrecognized option 'v'</span>; ignored  </span><br><span class="line">vbc : Command line error BC2008 : no input sources specified</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">'FileName: HelloWorld.rb  rb 作为 VB 源文件的后缀  </span></span><br><span class="line"><span class="keyword">Module</span> Hello    </span><br><span class="line">  <span class="keyword">Sub</span> Main()               <span class="comment">'程序人口函数  </span></span><br><span class="line">    MsgBox(<span class="string">"Hello,World!"</span>) <span class="comment">'计算机屏幕上显示信息  </span></span><br><span class="line">  <span class="keyword">End</span> <span class="keyword">Sub</span>                  <span class="comment">'End 作为程序块结尾  </span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Module</span>                 <span class="comment">'单引号作为注释</span></span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">D:\&gt;vbc HelloWorld.vb      #vbs 来编译，生成 HelloWorld.exe 可执行文件  </span><br><span class="line">Microsoft (R) Visual Basic Compiler version <span class="number">8.0</span>.50727.5483  </span><br><span class="line"><span class="function"><span class="keyword">for</span> <span class="title">Microsoft</span> <span class="params">(R)</span> .NET Framework version 2.0.50727.5485  </span></span><br><span class="line"><span class="function"><span class="title">Copyright</span> <span class="params">(c)</span> Microsoft Corporation.  All rights reserved.  </span></span><br><span class="line"><span class="function">D:\&gt;HelloWorld</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Scala"><a href="#Scala" class="headerlink" title="Scala"></a>Scala</h2><p>环境: scala-2.11.4.msi 编译器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">d:\&gt;scala  </span><br><span class="line">Welcome to Scala version <span class="number">2.11</span>.4 (<span class="function">Java <span class="title">HotSpot</span><span class="params">(TM)</span> Client VM, Java 1.7.0_51).  </span></span><br><span class="line"><span class="function">Type in expressions to have them evaluated.  </span></span><br><span class="line"><span class="function">Type :help <span class="keyword">for</span> more information.  </span></span><br><span class="line"><span class="function">  </span></span><br><span class="line">scala&gt; println("Hello,World!");   #可在交互式界面执行 println 语句，很像 java  </span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">object HelloWorld  </span><br><span class="line">&#123;  </span><br><span class="line">  <span class="function">def <span class="title">main</span><span class="params">(args:Array[String])</span>   </span></span><br><span class="line"><span class="function">  </span>&#123;  </span><br><span class="line">     println(<span class="string">"Hello,World!"</span>);  </span><br><span class="line">  &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">//编译  </span></span><br><span class="line">d:\HelloWorld&gt;scala HelloWorld.scala  </span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>Scala 是一门把面向对象和函数式编程思想加入静态类型中的编程语言，志在以简练、优雅及类型安全的方式来表达常用编程模式。它平滑地集成了面向对象和函数语言的特性，使 Java 和其他语言的程序员使用 Scala 时更富有成效。</p>
+<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><p>环境: Linux/Unix 平台，或安装了 MinGW 和 MSYS 的 Windows 平台<br>代码</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>安装了MinGW和MSYS的Windows平台  </span><br><span class="line">D:\HelloWorld&gt;echo "Hello,World!"  </span><br><span class="line">"Hello,World!"  </span><br><span class="line"><span class="meta">#</span>Linux平台下  </span><br><span class="line"><span class="meta">#</span>echo "Hello,World!"   或 printf "Hello,World!"  </span><br><span class="line"><span class="meta">#</span>如果是写在文件中:  </span><br><span class="line">chmod +x  HelloWorld.sh  </span><br><span class="line">./HelloWorld.sh</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>Shell 诞生于 Unix，是与 Linux/Unix 交互的工具，单独地学习 Shell 是没有意义的，必须先学习 Linux/Unix。  </span><br><span class="line"><span class="meta">#</span>Shell 虽然是 Unix 的第一个脚本语言，但它是相当优秀的。它结合了延展性与效率，持续保有独具的特色，并不断的被改良，功能更加强大。  </span><br><span class="line"><span class="meta">#</span>缺点：Shell 需要依赖其他程序才能完成大部分的工作，优点：简洁的脚本语言标记方式，比 C 语言编写的程序执行更快、更有效率。</span><br></pre></td></tr></table></figure>
+
+<h2 id="Delphi"><a href="#Delphi" class="headerlink" title="Delphi"></a>Delphi</h2><p>环境: Delphi 7<br>代码<br>[File|New|Application]–&gt;拖一个Button、一个Label–&gt;双击Button，编码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">procedure TForm1.Button1Click(Sender: TObject);  </span><br><span class="line">begin  </span><br><span class="line">  label1.Caption := <span class="string">'Hello,World!'</span>;  </span><br><span class="line">end;  </span><br><span class="line">  </span><br><span class="line">procedure TForm1.FormCreate(Sender: TObject);  </span><br><span class="line">begin  </span><br><span class="line">  </span><br><span class="line">end;  </span><br><span class="line">  </span><br><span class="line">end.</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>Delphi，是 Windows 平台下著名的快速应用程序开发工具（Rapid Application Development，简称 RAD）。<br>似乎很多人都觉得 Delphi 已经没落了、过时了（我身边有好多同事都没听过 Delphi）。<br>但我不这么认为，”真正的程序员用 C，聪明的程序员用 Delphi”，经典无需多言，尤其是开发GUI程序，拖一下就 OK 了！！！</p>
+<h2 id="Fortran"><a href="#Fortran" class="headerlink" title="Fortran"></a>Fortran</h2><p>环境: Linux 或者安装了 MinGW 的 Windows 平台</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;gfortran -v  </span><br><span class="line">Using built-in specs.  </span><br><span class="line">COLLECT_GCC=gfortran  </span><br><span class="line">COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/<span class="number">4.8</span>.1/lto-wrapper.exe  </span><br><span class="line">Target: mingw32  </span><br><span class="line">Configured with: ../gcc-<span class="number">4.8</span>.1/configure --prefix=/mingw --host=mingw32 --build=mingw32 --without-pic  </span><br><span class="line"> --enable-shared --enable-<span class="keyword">static</span> --with-gnu-ld --enable-lto --enable-libssp --disable-multilib --ena  </span><br><span class="line">ble-languages=c,c++,fortran,objc,obj-c++,ada --disable-sjlj-exceptions --with-dwarf2 --disable-win32  </span><br><span class="line">-registry --enable-libstdcxx-debug --enable-version-specific-runtime-libs --with-gmp=/usr/src/pkg/gm  </span><br><span class="line">p-<span class="number">5.1</span>.2-<span class="number">1</span>-mingw32-src/bld --with-mpc=/usr/src/pkg/mpc-<span class="number">1.0</span>.1-<span class="number">1</span>-mingw32-src/bld --with-mpfr= --with-sy  </span><br><span class="line">stem-zlib --with-gnu-as --enable-decimal-<span class="keyword">float</span>=yes --enable-libgomp --enable-threads --with-libiconv  </span><br><span class="line">-prefix=/mingw32 --with-libintl-prefix=/mingw --disable-bootstrap LDFLAGS=-s CFLAGS=-D_USE_32BIT_TIM  </span><br><span class="line">E_T  </span><br><span class="line">Thread model: win32  </span><br><span class="line">gcc version <span class="number">4.8</span>.1 (GCC)</span><br></pre></td></tr></table></figure>
+
+<p>代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">program hello  </span><br><span class="line">print *,<span class="string">"Hello World!"</span>  </span><br><span class="line">end program hello</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>Fortran 是最早出现的计算机语言，主要用于科学及工程计算领域，这一点和 Python 相同。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;gfortran -ffree-form HelloWorld.f -o out.exe  #-ffree-form 自由格式 -o 后面是输出文件  </span><br><span class="line">#后缀名可以为.f, .F, .f90, .fpp. 如果是 .f90 结尾的文件，可以不用 -ffree-form，因为该后缀结尾的文件默认是自由格式  </span><br><span class="line">D:\HelloWorld&gt;out      #如果是 .f 结尾的话，必须要加上，否则报错  </span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<h2 id="TCL"><a href="#TCL" class="headerlink" title="TCL"></a>TCL</h2><p>环境: Linux 或带有 WinGW 的 Windows 平台</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#命令行交互方式  </span><br><span class="line">D:\&gt;tclsh  </span><br><span class="line">% puts <span class="string">"Hello,World!"</span>  </span><br><span class="line">Hello,World!  </span><br><span class="line">% exit  </span><br><span class="line">D:&gt;  </span><br><span class="line">#文件方式运行  </span><br><span class="line">#!/usr/local/bin/tcl  </span><br><span class="line">puts <span class="string">"Hello, world!"</span>  </span><br><span class="line">D:\&gt;tclsh HelloWorld.tcl  </span><br><span class="line">Hello,World!</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<ol>
+<li>文件名后缀 .tcl 编译器为 tclsh（命令方式显示）或 wish（GUI方式显示）。</li>
+<li>TCL（Tool Command Language）一种通用的脚本语言，几乎在所有平台都能运行，功能非常强。</li>
+</ol>
+<h2 id="FoxPro"><a href="#FoxPro" class="headerlink" title="FoxPro"></a>FoxPro</h2><p>环境: VFP9.0<br>代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?<span class="string">"Hello,World!"</span></span><br></pre></td></tr></table></figure>
+
+<p>说明<br>尽管编译、运行都通过了，GUI 界面仍然不知道如何显示编译后的结果，还是在命令行界面里运行 .FXP 文件才显示的结果。<br>Visual FoxPro 原名 FoxBase，最初是由美国 Fox Software 公司于 1988 年推出的数据库产品，在 DOS 上运行，与 xBase 系列兼容。FoxPro 是 FoxBase 的加强版，最高版本曾出过 2.6。之后于 1992 年，Fox Software 公司被 Microsoft 收购，加以发展，使其可以在 Windows 上运行，并且更名为 Visual FoxPro。FoxPro 比 FoxBASE 在功能和性能上又有了很大的改进，主要是引入了窗口、按纽、列表框和文本框等控件，进一步提高了系统的开发能力。</p>
+<h2 id="Ada"><a href="#Ada" class="headerlink" title="Ada"></a>Ada</h2><p>环境: ADA95 的 gnat 编译器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">d:\HelloWorld&gt;gnat  </span><br><span class="line">GNAT <span class="number">4.8</span>.1  </span><br><span class="line">Copyright <span class="number">1996</span>-<span class="number">2013</span>, Free Software Foundation, Inc.  </span><br><span class="line">  </span><br><span class="line">List of available commands  </span><br><span class="line">  </span><br><span class="line">gnat bind               gnatbind  </span><br><span class="line">gnat chop               gnatchop  </span><br><span class="line">gnat clean              gnatclean  </span><br><span class="line">gnat compile            gnatmake -f -u -c  </span><br><span class="line">gnat check              gnatcheck  </span><br><span class="line">gnat elim               gnatelim  </span><br><span class="line">gnat find               gnatfind  </span><br><span class="line">gnat krunch             gnatkr  </span><br><span class="line">gnat link               gnatlink  </span><br><span class="line">gnat list               gnatls  </span><br><span class="line">gnat make               gnatmake  </span><br><span class="line">gnat metric             gnatmetric  </span><br><span class="line">gnat name               gnatname  </span><br><span class="line">gnat preprocess         gnatprep  </span><br><span class="line">gnat pretty             gnatpp  </span><br><span class="line">gnat stack              gnatstack  </span><br><span class="line">gnat stub               gnatstub  </span><br><span class="line">gnat test               gnattest  </span><br><span class="line">gnat xref               gnatxref</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>Ada 是一种表现能力很强的通用程序设计语言，它是美国国防部为克服软件开发危机而研发的。在经过除去 # 行获得最终处理过的文件后即可交由 GNAT 编译。</p>
+<h2 id="AWK"><a href="#AWK" class="headerlink" title="AWK"></a>AWK</h2><p>环境: Linux/Unix 平台，或安装了 MinGW 和 MSYS 的 Windows 平台<br>代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@Linux ~]# echo | awk '&#123;print "Hello,World!"&#125;'  </span><br><span class="line">Hello,World!  </span><br><span class="line">[root@Linux ~]# echo | awk 'BEGIN &#123;print "Hello,World!"&#125;'</span><br><span class="line">Hello,World!  </span><br><span class="line">[root@Linux ~]# awk 'BEGIN &#123;print "Hello,World!"&#125;'  </span><br><span class="line">Hello,World!  </span><br><span class="line">[root@Linux ~]# echo "hello world" | awk '&#123;print&#125;'  </span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
+
+<p>说明</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#AWK 是一种优良的文本处理工具。它不仅是 Linux 中也是任何环境中现有的功能最强大的数据处理引擎之一。&lt;br /&gt;</span><br><span class="line">#AWK 名称得自于它的创始人，分别是 Alfred Aho、Peter Weinberger 和 Brian Kernighan 姓氏的首个字母。&lt;br /&gt;</span><br><span class="line">#AWK 提供了极其强大的功能：可以进行样式装入、流控制、数学运算符、进程控制语句甚至于内置的变量和函数。它具备了一个完整的语言所应具有的几乎所有精美特性。</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sed"><a href="#Sed" class="headerlink" title="Sed"></a>Sed</h2><p>环境: Linux/Unix<br>代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># sed -ne '1s/.*/Hello, world!/p'  </span><br><span class="line">Hello,World!                     #第一行为输入  </span><br><span class="line">Hello, world!                    #</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>sed 流编辑器，和 awk、正则表达式等一起，是编写 Linux 脚本中非常有用的工具。</p>
+<h2 id="Pascal"><a href="#Pascal" class="headerlink" title="Pascal"></a>Pascal</h2><p>环境: Free Pacal IDE<br>代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Program <span class="title">HelloWorld</span><span class="params">(output)</span></span>;  </span><br><span class="line">begin  </span><br><span class="line">  writeln(<span class="string">'Hello, world!'</span>) </span><br><span class="line"></span><br><span class="line"> &#123;程序块的最后一条语句后不需要<span class="string">";"</span> - 如果添加一个<span class="string">";"</span>，会在程序中增加一个“空语句”&#125;  </span><br><span class="line">end.</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>Pascal 程序开始于外部文件描述符作为参数的 program 关键字；然后跟着 begin 和 end 关键字封装的主要块。分号分区语句，句点终结整个程序（或单元）。Pascal 源代码是大小写不敏感的。这里是一个非常简单的”Hello world”程序示例的源代码，在实际编程中，通常可以省略第一行的output。从语法整理上来看，很像 Delphi，基本上是一个等级的。另外，FPC 编译器安装后，居然显示是乱码，看来还是要下载（Turbo Pascal）更经典些，不过听说 Turbo Pascal 下载比较难，再说，能不能在 WIN*64 位的平台编译也不知道，就下了个 FPC 用用。</p>
+<h2 id="Prolog"><a href="#Prolog" class="headerlink" title="Prolog"></a>Prolog</h2><p>环境: SWI-PrologPortable 编译器</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">write(<span class="string">"Hello,World!"</span>).    </span><br><span class="line">#注意，句末有点号</span><br></pre></td></tr></table></figure>
+
+<p>说明<br>Prolog（Programming in Logic）是一种逻辑编程语言。它建立在逻辑学的理论基础之上，最初被运用于自然语言等研究领域。现已广泛地应用在人工智能的研究中，可以用来建造专家系统、自然语言理解、智能知识库等。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>IEEE Spectrum 根据十多个数据来源，对各大编程语言的使用普及率进行了统计，公布了 2014 年编程语言总排行榜前二十名、Web 开发语言排行榜前十名以及移动应用开发语言排行榜前十名。统计数据结果如下:</p>
+<p>总排行榜：</p>
+<h4 id="Web-开发排行-TOP10："><a href="#Web-开发排行-TOP10：" class="headerlink" title="Web 开发排行 TOP10："></a>Web 开发排行 TOP10：</h4><ul>
+<li>Java</li>
+<li>Python</li>
+<li>C#</li>
+<li>PHP</li>
+<li>JavaScript</li>
+<li>Ruby</li>
+<li>Perl</li>
+<li>HTML</li>
+<li>Scala</li>
+<li>Go</li>
+</ul>
+<h4 id="移动应用开发语言排行-TOP10："><a href="#移动应用开发语言排行-TOP10：" class="headerlink" title="移动应用开发语言排行 TOP10："></a>移动应用开发语言排行 TOP10：</h4><ul>
+<li>Java</li>
+<li>C</li>
+<li>C++</li>
+<li>C#</li>
+<li>JavaScript</li>
+<li>Objective-C</li>
+<li>Scala</li>
+<li>Delphi</li>
+<li>Scheme</li>
+<li>ActionScript</li>
+</ul>
+<p><em>以上统计数据分别来自 Google 搜索结果、Google 趋势分析、推特、GitHub 库、StackOverflow 问答、Reddit 文章、Hacker News、Career Builder、ice job 以及 IEEE 期刊论文等。</em></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpeg" alt="Willian 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="Willian 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hello-world/" rel="tag"># hello world</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/18/自己动手搭建翻墙服务器/" rel="prev" title="自己动手搭建翻墙服务器">
+                自己动手搭建翻墙服务器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Willian">
+            
+              <p class="site-author-name" itemprop="name">Willian</p>
+              <p class="site-description motion-element" itemprop="description">业精于勤,荒于嬉</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/rss2.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/absoute" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:pengwed@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:48865270@qq.com" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">2.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-1"><span class="nav-number">3.</span> <span class="nav-text">C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-number">4.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-2"><span class="nav-number">5.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP"><span class="nav-number">6.</span> <span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-number">7.</span> <span class="nav-text">JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ruby"><span class="nav-number">8.</span> <span class="nav-text">Ruby</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R"><span class="nav-number">9.</span> <span class="nav-text">R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL"><span class="nav-number">10.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perl"><span class="nav-number">11.</span> <span class="nav-text">Perl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">12.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VB"><span class="nav-number">13.</span> <span class="nav-text">VB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scala"><span class="nav-number">14.</span> <span class="nav-text">Scala</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shell"><span class="nav-number">15.</span> <span class="nav-text">Shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delphi"><span class="nav-number">16.</span> <span class="nav-text">Delphi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fortran"><span class="nav-number">17.</span> <span class="nav-text">Fortran</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCL"><span class="nav-number">18.</span> <span class="nav-text">TCL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FoxPro"><span class="nav-number">19.</span> <span class="nav-text">FoxPro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ada"><span class="nav-number">20.</span> <span class="nav-text">Ada</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AWK"><span class="nav-number">21.</span> <span class="nav-text">AWK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sed"><span class="nav-number">22.</span> <span class="nav-text">Sed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pascal"><span class="nav-number">23.</span> <span class="nav-text">Pascal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prolog"><span class="nav-number">24.</span> <span class="nav-text">Prolog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">25.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Web-开发排行-TOP10："><span class="nav-number">25.0.1.</span> <span class="nav-text">Web 开发排行 TOP10：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动应用开发语言排行-TOP10："><span class="nav-number">25.0.2.</span> <span class="nav-text">移动应用开发语言排行 TOP10：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Willian</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
+<script type="text/javascript" src="/js/src/post-details.js?v="></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ayazKhyh8b1LGYL1yCuubPiY-gzGzoHsz", "3eUYPmQB4m7pIIhBNbAgXt4e");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

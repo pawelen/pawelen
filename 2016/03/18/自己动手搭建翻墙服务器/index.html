@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ss搭建,翻墙,">
+
+
+
+
+
+  <link rel="alternate" href="/rss2.xml" title="Willian's Notes" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="作为一个新时代的人，真的是离不开Google。但国内大环境如此，访问Google困难重重。但是再难，工作也是要展开的！我们之前还可以通过购买商家们的爬墙服务来实现访问Google，但这阵严打，这类服务商死掉了一大批，很多朋友也平白遭受了损失！以后政策会越来越收紧，能提供此类服务的商家会越来越少，取得合法资质运营此类业务的商家，其费用估计也是天价。在这种情况下，我推荐大家自行搭梯子翻墙，个人自己搭建">
+<meta name="keywords" content="ss搭建,翻墙">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自己动手搭建翻墙服务器">
+<meta property="og:url" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/index.html">
+<meta property="og:site_name" content="Willian&#39;s Notes">
+<meta property="og:description" content="作为一个新时代的人，真的是离不开Google。但国内大环境如此，访问Google困难重重。但是再难，工作也是要展开的！我们之前还可以通过购买商家们的爬墙服务来实现访问Google，但这阵严打，这类服务商死掉了一大批，很多朋友也平白遭受了损失！以后政策会越来越收紧，能提供此类服务的商家会越来越少，取得合法资质运营此类业务的商家，其费用估计也是天价。在这种情况下，我推荐大家自行搭梯子翻墙，个人自己搭建">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/7.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/8.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/9.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/10.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/11.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/12.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/13.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/14.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/15.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/16.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/17.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/18.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/19.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/20.png">
+<meta property="og:updated_time" content="2018-05-01T11:11:53.675Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自己动手搭建翻墙服务器">
+<meta name="twitter:description" content="作为一个新时代的人，真的是离不开Google。但国内大环境如此，访问Google困难重重。但是再难，工作也是要展开的！我们之前还可以通过购买商家们的爬墙服务来实现访问Google，但这阵严打，这类服务商死掉了一大批，很多朋友也平白遭受了损失！以后政策会越来越收紧，能提供此类服务的商家会越来越少，取得合法资质运营此类业务的商家，其费用估计也是天价。在这种情况下，我推荐大家自行搭梯子翻墙，个人自己搭建">
+<meta name="twitter:image" content="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/">
+
+
+
+
+
+  <title>自己动手搭建翻墙服务器 | Willian's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Willian's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/18/自己动手搭建翻墙服务器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Willian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Willian's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">自己动手搭建翻墙服务器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-18T22:09:29+08:00">
+                2016-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/03/18/自己动手搭建翻墙服务器/" class="leancloud_visitors" data-flag-title="自己动手搭建翻墙服务器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>作为一个新时代的人，真的是离不开Google。但国内大环境如此，访问Google困难重重。但是再难，工作也是要展开的！我们之前还可以通过购买商家们的爬墙服务来实现访问Google，但这阵严打，这类服务商死掉了一大批，很多朋友也平白遭受了损失！以后政策会越来越收紧，能提供此类服务的商家会越来越少，取得合法资质运营此类业务的商家，其费用估计也是天价。在这种情况下，我推荐大家自行搭梯子翻墙，个人自己搭建自己使用的梯子，不会成为重点打击对象。</p>
+<p><font style="color:red">注：特别说明！此翻墙SS服务器适用于各种常见终端设备(Windows、Mac OS、安卓、IOS等等)…</font></p>
+<p>本教程介绍的并非免费翻墙,需要购买一台境外服务器来作为自己的专用翻墙服务器。本篇教程全程傻瓜化，无任何技术难度，不需要输入任何命令，不需要记住任何代码。</p>
+<p>分三步走，大概花十分钟就能建立起你自己的专用服务器，完全不必觉得这会非常困难。本篇教程以Bandwagonhost(搬瓦工)的 10G KVM – PROMO VPS（本服务器已售完，请选择其它的）为基础，使用 shadowsocks 为梯子程序。</p>
+<p>废话不多说，开始本篇教程。</p>
+<h4 id="购买一台境外服务器用于搭建梯子的服务端"><a href="#购买一台境外服务器用于搭建梯子的服务端" class="headerlink" title="购买一台境外服务器用于搭建梯子的服务端"></a>购买一台境外服务器用于搭建梯子的服务端</h4><p>选择以下套餐 VPS 购买一台：<br>年付 19.99 美元 KVM 架构 VPS （本服务器已售完，请点击选择其它服务器）1 核 CPU 512M 内存 每月 500G 流量&lt;– 本篇教程使用</p>
+<p>说明：以上为搬瓦工在售的四个价格最低的套餐。两个流量更多的不可更换机房的套餐搬瓦工说明为 CHINA DIRECT ROUTE 中国直连路由，但实测意义不大，和普通版 QN 机房几无差别。其流量更大是个优点，不过普通版如果对所在机房网络表现不满意可以很方便的切换到别的机房，而直连路由就无法切换了。各有优缺点，大家自己取舍。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/1.jpg">
+
+<p>为什么要选年付呢？因为年付相比每月付款等于 5.5 折！搬瓦工也有 30 天退款保证，觉得不好用再申请退款也可以。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/2.jpg">
+
+<p>6 个数据中心可选，建议选择 Los（洛杉矶），离中国距离最近，开通以后也可以随意切换（直连路由套餐无法切换）。选完之后 点击最下面的“Add to Cart”。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/3.jpg">
+
+<p>进入到购物车，可以看到结账明细，下面有优惠码输入框 输入“BWH1ZBPVK”6%优惠码 节省一点是一点吧。</p>
+
+
+<p>输入之后是这样的之后点“checkout”结账。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/5.jpg">
+
+
+
+<p>新用户会要求填写一些信息注册账户，全部用拼音如实填写即可。注意地址一定要如实填写，不用写得那么细，但起码要和你所在城市一样，要不检测到 IP 地址与填写城市不一致，会被判欺诈，导致购买失败！</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/7.jpg">
+
+<p>三种支付方式供选择，哪个方便选哪个吧，本次以某宝为例说明。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/8.jpg">
+
+<p>点“Complete Order”后再点“Pay now”。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/9.jpg">
+
+<p>跳转到某宝网站选择扫码或登陆账号完成支付。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/10.jpg">
+
+<p>支付成功！</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/11.jpg">
+
+<p>跳转回搬瓦工，显示订单完成，并显示订单号，购买服务器完成！</p>
+<h4 id="搭建-shadowsocks-server-端"><a href="#搭建-shadowsocks-server-端" class="headerlink" title="搭建 shadowsocks server 端"></a>搭建 shadowsocks server 端</h4><p>搬瓦工直接在后台集成了 shadowsokcs，登陆后台就能一键安装，方便小白用户（它知道你们看见命令行会头痛）。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/12.jpg">
+
+<p>在用户中心 选择 My Services。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/13.jpg">
+
+<p>可以看到你刚才购买的服务器已经激活运行，点击 KiviVM Control Panel 进入 VPS 管理面板，进入面板后你会看到一些服务器的运行信息，如内存使用量，磁盘使用量，流量使用情况等，可能你会看不懂，没关系，略过这些，我们直接安装shadowsocks server 如下图所示！</p>
+<p>注：最近很多新购买的服务器在VPS管理面板没有“shadowsocks server”这一项，若是发生此原因，请按如下操作即可正常安装！若页面中没有Shadowsocks Server这一项，说明一键搭建SS功能被去掉了，这时候需要在当前浏览器的新标签中打开以下网址：<br><a href="https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks" target="_blank" rel="noopener">https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks</a><br>，打开以后就是安装页面，点击页面中的Install Shadowsocks Server安装即可(安装前提是服务器已打开已运行)。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/14.jpg">
+
+<p>安装成功显示如下：</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/15.jpg">
+
+<p>Go Back 后就能看到 shadowsocks 的连接信息了，如下图所示：</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/16.jpg">
+
+<p>shadowsocks 服务端配置完成！</p>
+<h4 id="配置-shadowsocks-本地客户端"><a href="#配置-shadowsocks-本地客户端" class="headerlink" title="配置 shadowsocks 本地客户端"></a>配置 shadowsocks 本地客户端</h4><p>搬瓦工不愧为 Linux 小白挚友，直接在后台就给出了客户端配置教程，我也在这里说下(以下所有文件，如有解压密码，密码均为：<code>www.yigeni.com</code>！</p>
+<p>Android 安卓手机用户：<br>访问 Google Play 商店下载 Shadowsocks-Android。手机里没有 play 商店？无法翻墙？废话…没关系，打开“<a href="http://apps.evozi.com/apk-downloader/" target="_blank" rel="noopener">http://apps.evozi.com/apk-downloader/</a>”，然后将链接“<a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks" target="_blank" rel="noopener">https://play.google.com/store/apps/details?id=com.github.shadowsocks</a>”粘贴进去进行下载，当然也可搜索APK名称进行下载。注：最好使用小编推荐链接下载，第三方其它路径下载可能会出现问题。</p>
+<p>IOS 苹果 Iphone 用户：<br>直接在 Appstore 里选择以下 App 之一安装。shadowsocks 原版免费需要越狱才能使用全功能，要不只是一个支持翻墙的浏览器。shadowrocket 售价 18 元 俗称小火箭，支持全局翻墙，无需越狱。<br>推荐 Wingy 免费，支持全局翻墙，无需越狱，不过近期有朋友反馈不能用了。近期苹果官方已经把中国区的所有 Shadowsocks 应用下架了，如果你的 Iphone 绑定的是中国区的账号，会无法搜索到上述 App，可以把账号更改成美国区账号，就能搜索到了。</p>
+<p>Mac OS 用户：<br>Mac OS X GUI Client，<a href="https://pan.baidu.com/share/init?surl=slhZ9QP" target="_blank" rel="noopener">ShadowsocksX-2.6.3.dmg</a>提取密码：movj，文件解压密码:<code>www.yigeni.com</code>或者<a href="https://pan.baidu.com/share/init?surl=i5nF4HZ" target="_blank" rel="noopener">GoAgentX-v2.2.9.dmg</a>提取密码：wd5h，文件解压密码：<code>www.yigeni.com</code>。</p>
+<p>Windows 用户：<br>Windows XP 和 Windows 7 请下载 <a href="https://pan.baidu.com/share/init?surl=eS8e0Qu" target="_blank" rel="noopener">shadowsocks-win-2.3.zip</a>提取密码：b3nz，文件解压密码：<code>www.yigeni.com</code> 需要 <a href="www.microsoft.com/zh-CN/download/details.aspx?id=21">Microsoft .NET Framework 3.5</a> 支持；</p>
+<p>Windows 8 及 Windows 10 请下载 <a href="https://pan.baidu.com/share/init?surl=eS8e0Qu" target="_blank" rel="noopener">shadowsocks-win-dotnet4.0-2.3.zip</a>提取密码：md1z，文件解压密码：<code>www.yigeni.com</code> 需要 <a href="https://www.microsoft.com/zh-CN/download/details.aspx?id=53344" target="_blank" rel="noopener">Microsoft .NET Framework 4.6.2</a> 支持。</p>
+<p>注意：此工具不是 VPN 之类全局代理，本质上只是一个 Socks5 代理，通过修改系统代理实现翻墙，可能会被 360 卫士或其它电脑安全管家之类的软件静默阻止，造成软件运行出错。运行前请退出某卫士或某管家，或把 SS 客户端加入其白名单！建议最好不要安装某卫士或管家，安装正统的杀毒软件，如卡巴斯基、NOD32、诺顿、McAfee，这些软件都不会对 SS 进行阻止！</p>
+<p>Windows客户端操作：<br>这是绿色软件，下载之后解压就能用，打开 shadowsocks.exe 会看到通知栏有一个纸飞机图标 双击它！</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/17.jpg">
+
+<p>填入服务端信息后确定，会自己最小化到通知栏，右键单击-启用系统代理（其中“系统代理模式”一般为“PAC模式”，有时可尝试切一切）。</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/18.jpg">
+
+<p>好了，你可以打开浏览器看下能不能正常访问Google了！</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/19.jpg">
+
+<p>ok！搞定！</p>
+<p>安卓客户端操作：<br>打开手机SS客户端，点击右上角+号，选择手动设置。<br>在弹出页面中填写你的SS服务器IP、远程端口、密码、加密方式，点击对号保存，如下图：</p>
+<img src="/2016/03/18/自己动手搭建翻墙服务器/20.png">
+
+<p>提醒：网上有一些人在售卖或者免费提供SS 帐号(或者所谓的什么加速服务)，我想说的是，你永远不知道电脑那一端的那个陌生人在想些什么，想干什么！使用别人提供的 SS 帐号是有安全隐患的，因为他知道你的加密方式，并且服务端掌握在他手里，他是可以对你的网络通信进行监听的，我们做外贸的，有时信息泄露的后果挺严重的，望大家慎重。</p>
+<p>安全提醒：<br>Shadowsocks 只是一个帮你穿越长城防火墙的小工具，它无法帮你保持匿名！在使用时务必遵守中国（人在中国）和服务器所在地（服务器在美国）的法律！墙外言论纷杂，接收信息时务必保持自己的理性思辨！</p>
+<p>不差钱！不想用美国的服务器，只要速度快！没问题！阿里云HK、LinodeJP 等高富帅服务器欢迎你！</p>
+<p>搬瓦工官网：<a href="https://bwh1.net/" target="_blank" rel="noopener">https://bwh1.net/</a> .<br>最新优惠：<a href="http://banwagong.cn/" target="_blank" rel="noopener">http://banwagong.cn/</a>.<br>其它 Linux VPS 推荐：<a href="https://www.zhihu.com/question/20800554" target="_blank" rel="noopener">https://www.zhihu.com/question/20800554</a>(未测试，仅供参考).</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpeg" alt="Willian 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpeg" alt="Willian 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ss搭建-翻墙/" rel="tag"># ss搭建,翻墙</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/04/hello-world/" rel="next" title="24种编程语言的Hello World程序">
+                <i class="fa fa-chevron-left"></i> 24种编程语言的Hello World程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/24/2小时搭建github-hexo博客/" rel="prev" title="2小时搭建github+hexo博客">
+                2小时搭建github+hexo博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpeg" alt="Willian">
+            
+              <p class="site-author-name" itemprop="name">Willian</p>
+              <p class="site-description motion-element" itemprop="description">业精于勤,荒于嬉</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/rss2.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/absoute" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:pengwed@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:48865270@qq.com" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#购买一台境外服务器用于搭建梯子的服务端"><span class="nav-number">1.</span> <span class="nav-text">购买一台境外服务器用于搭建梯子的服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搭建-shadowsocks-server-端"><span class="nav-number">2.</span> <span class="nav-text">搭建 shadowsocks server 端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置-shadowsocks-本地客户端"><span class="nav-number">3.</span> <span class="nav-text">配置 shadowsocks 本地客户端</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Willian</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
+<script type="text/javascript" src="/js/src/post-details.js?v="></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ayazKhyh8b1LGYL1yCuubPiY-gzGzoHsz", "3eUYPmQB4m7pIIhBNbAgXt4e");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
